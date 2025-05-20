@@ -35,3 +35,55 @@ Route::get('blog', function () {
 });
 
 Route::get('hello',[Coba::class, 'helloworld']);
+
+Route::get('pertama', function () {
+	return view('pertama');
+});
+
+Route::get('animation', function () {
+	return view('animation');
+});
+
+Route::get('bootstrap1', function () {
+	return view('bootstrap1');
+});
+
+Route::get('bootstrap2', function () {
+	return view('bootstrap2');
+});
+
+Route::get('counter', function () {
+	return view('counter');
+});
+
+Route::get('form', function () {
+	return view('form');
+});
+
+Route::get('js1', function () {
+	return view('js1');
+});
+
+Route::get('js2', function () {
+	return view('js2');
+});
+
+Route::get('latihan', function () {
+	return view('latihan');
+});
+
+Route::get('linktree', function () {
+	return view('linktree');
+});
+
+Route::get('ets', function () {
+	return view('ets');
+});
+
+Route::get('frontend', function () {
+	return view('frontend');
+});
+
+Route::get('danantara', function () {
+	return view('danantara');
+});
