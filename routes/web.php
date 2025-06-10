@@ -5,6 +5,7 @@ use App\Http\Controllers\Coba;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
+use App\Http\Controllers\MonitorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -114,3 +115,11 @@ Route::post('/pegawai/update', [PegawaiDBCOntroller::class, 'update']);
 Route::get('/pegawai/hapus/{id}', [PegawaiDBCOntroller::class, 'hapus']);
 Route::get('/pegawai/cari', [PegawaiDBCOntroller::class, 'cari']);
 
+// route CRUD dataabase monitor belajar_laravel
+Route::get('/monitor', [MonitorController::class, 'indexmonitor']);
+Route::get('/monitor/tambah', [MonitorController::class, 'tambahmonitor']);
+Route::post('/monitor/store', [MonitorController::class, 'storemonitor']);
+Route::get('/monitor/edit/{ID}', [MonitorController::class, 'editmonitor']);
+Route::post('/monitor/update', [MonitorController::class, 'updatemonitor']);
+Route::get('/monitor/hapus/{ID}', [MonitorController::class, 'hapusmonitor']);
+Route::get('/monitor/cari', [MonitorController::class, 'carimonitor']);
