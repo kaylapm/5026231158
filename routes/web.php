@@ -6,6 +6,7 @@ use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\MonitorController;
+use App\Http\Controllers\KeranjangController;
 
 /*
 |--------------------------------------------------------------------------
@@ -123,3 +124,11 @@ Route::get('/monitor/edit/{ID}', [MonitorController::class, 'editmonitor']);
 Route::post('/monitor/update', [MonitorController::class, 'updatemonitor']);
 Route::get('/monitor/hapus/{ID}', [MonitorController::class, 'hapusmonitor']);
 Route::get('/monitor/cari', [MonitorController::class, 'carimonitor']);
+
+// route CRUD dataabase keranjangbelanja belajar_laravel
+Route::get('/keranjang', [App\Http\Controllers\KeranjangController::class, 'indexkeranjang']);
+Route::get('/keranjang/tambah', [App\Http\Controllers\KeranjangController::class, 'tambahkeranjang']);
+// Route::post('/keranjang/store', [App\Http\Controllers\KeranjangController::class, 'storekeranjang']);
+Route::get('/keranjang/tambah/{ID}', [App\Http\Controllers\KeranjangController::class, 'storekeranjang']);
+Route::post('/keranjang/update', [App\Http\Controllers\KeranjangController::class, 'updatekeranjang']);
+Route::get('/keranjang/hapus/{ID}', [App\Http\Controllers\KeranjangController::class, 'keranjangbelanja']);

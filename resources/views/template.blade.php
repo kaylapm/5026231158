@@ -12,9 +12,59 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <style>
+        body {
+            background-color: #ffffff; /* Background putih */
+            font-family: Arial, sans-serif;
+        }
+
         .jumbotron {
-            background-color: #9de2e2;
-            height: 100px;
+            background-color: #a2c2f3;
+            color: white;
+            padding: 30px;
+            border-radius: 0;
+        }
+
+        .navbar {
+            background-color: #007bff; /* Biru Tua */
+        }
+
+        .navbar-nav .nav-link {
+            color: white !important;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #f8f200 !important;
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        /* Styling untuk tabel */
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Row ganjil dan genap berbeda warna */
+        tr:nth-child(odd) {
+            background-color: #f2f2f2; /* Warna abu-abu terang */
+        }
+
+        tr:nth-child(even) {
+            background-color: #ffffff; /* Warna putih */
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
         }
     </style>
 </head>
@@ -24,7 +74,7 @@
         <h1>5026231158 : Kayla Putri Maharani</h1>
     </div>
 
-    <nav class="navbar navbar-expand-sm bg-light">
+    <nav class="navbar navbar-expand-sm">
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link" href="/frontend">All Front End</a>
@@ -39,7 +89,7 @@
                 <a class="nav-link" href="#">EAS</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Latihan 1</a>
+                <a class="nav-link" href="/keranjang">Latihan 1</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Latihan 2</a>
