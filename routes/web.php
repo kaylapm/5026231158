@@ -7,6 +7,8 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\MonitorController;
 use App\Http\Controllers\KeranjangController;
+use App\Http\Controllers\KaryawanController;
+use App\Http\Controllers\CounterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -132,3 +134,14 @@ Route::get('/keranjang/tambah', [App\Http\Controllers\KeranjangController::class
 Route::get('/keranjang/tambah/{ID}', [App\Http\Controllers\KeranjangController::class, 'storekeranjang']);
 Route::post('/keranjang/update', [App\Http\Controllers\KeranjangController::class, 'updatekeranjang']);
 Route::get('/keranjang/hapus/{ID}', [App\Http\Controllers\KeranjangController::class, 'keranjangbelanja']);
+
+//route CRUD dataabase karyawan belajar_laravel
+Route::get('/karyawan', [App\Http\Controllers\KaryawanController::class, 'indexkaryawan']);
+Route::get('/karyawan/tambah', [App\Http\Controllers\KaryawanController::class, 'tambahkaryawan']);
+Route::post('/karyawan/store', [App\Http\Controllers\KaryawanController::class, 'storekaryawan']);
+Route::get('/karyawan/edit/{kodepegawai}', [App\Http\Controllers\KaryawanController::class, 'editkaryawan']);
+Route::post('/karyawan/update', [App\Http\Controllers\KaryawanController::class, 'updatekaryawan']);
+Route::get('/karyawan/hapus/{kodepegawai}', [App\Http\Controllers\KaryawanController::class, 'hapuskaryawan']);
+
+//route controller
+Route::get('/counter',[CounterController::class, 'read']);
