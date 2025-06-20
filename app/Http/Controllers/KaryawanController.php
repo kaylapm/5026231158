@@ -9,10 +9,10 @@ class KaryawanController extends Controller
 {
 	public function indexkaryawan()
 		{
-			// mengambil data dari table monitor
-            $karyawans = DB::table('karyawan')-> paginate(10);
+			// mengambil data dari table karyawan
+            $karyawans = DB::table('karyawan')-> get();
 
-			// mengirim data monitor ke view index
+			// mengirim data karyawan ke view index
 			return view('indexkaryawan',['karyawans' => $karyawans]);
 
 		}
@@ -21,51 +21,51 @@ class KaryawanController extends Controller
 			// memanggil view tambah
 			return view('tambahkaryawan');
 		}
-// method untuk insert data ke table monitor
+// method untuk insert data ke table karyawan
     public function storekaryawan(Request $request)
     {
-        // insert data ke table monitor
+        // insert data ke table karyawan
         DB::table('karyawan')->insert([
             'kodepegawai' => $request->kodepegawai,
             'namalengkap' => $request->namalengkap,
             'divisi' => $request->divisi,
             'departemen' => $request->departemen
         ]);
-        // alihkan halaman ke halaman monitor
+        // alihkan halaman ke halaman karyawan
         return redirect('/karyawan');
 
     }
 
     public function editkaryawan($kodepegawai) //ada primary key
     {
-        // mengambil data monitor berdasarkan id yang dipilih
+        // mengambil data karyawan berdasarkan id yang dipilih
         $karyawans = DB::table('karyawan')
         ->where('kodepegawai',$kodepegawai) //khusus operator =, kalau mau pakai selain itu harus sebutin operator di parameter kedua nya
         ->get();
-        // passing data monitor yang didapat ke view edit.blade.php
+        // passing data karyawan yang didapat ke view edit.blade.php
         return view('editkaryawan',['karyawans' => $karyawans]);
 
     }
-    // update data monitor
+    // update data karyawan
     public function updatekaryawan(Request $request)
     {
-        // update data monitor
+        // update data karyawan
         DB::table('karyawan')->where('kodepegawai',$request->ID)->update([
             'kodepegawai' => $request->kodepegawai,
             'namalengkap' => $request->namalengkap,
             'divisi' => $request->divisi,
             'departemen' => $request->departemen
         ]);
-        // alihkan halaman ke halaman monitor
+        // alihkan halaman ke halaman karyawan
         return redirect('/karyawan');
     }
-    // method untuk hapus data monitor
+    // method untuk hapus data karyawan
     public function hapuskaryawan($kodepegawai)
     {
-        // menghapus data monitor berdasarkan id yang dipilih
+        // menghapus data karyawan berdasarkan id yang dipilih
         DB::table('karyawan')->where('kodepegawai',$kodepegawai)->delete();
 
-        // alihkan halaman ke halaman monitor
+        // alihkan halaman ke halaman karyawan
         return redirect('/karyawan');
     }
 }

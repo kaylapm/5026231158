@@ -9,6 +9,10 @@ use App\Http\Controllers\MonitorController;
 use App\Http\Controllers\KeranjangController;
 use App\Http\Controllers\KaryawanController;
 use App\Http\Controllers\CounterController;
+use App\Http\Controllers\latihan4Controller;
+use App\Http\Controllers\chatController;
+use App\Http\Controllers\latihan6Controller;
+use App\Http\Controllers\mykaryawanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -145,3 +149,22 @@ Route::get('/karyawan/hapus/{kodepegawai}', [App\Http\Controllers\KaryawanContro
 
 //route controller
 Route::get('/counter',[CounterController::class, 'read']);
+
+//route eas mykatyawan
+Route::get('/eas', [mykaryawanController::class, 'indexmykaryawan']);
+Route::get('/eas/edit/{kodepegawai}', [mykaryawanController::class, 'editmykaryawan']);
+Route::post('/eas/update', [mykaryawanController::class, 'easupdate']);
+Route::get('/eas/view/{kodepegawai}', [mykaryawanController::class, 'viewmykaryawan']);
+//routelatihan4
+Route::get('/latihan4', [App\Http\Controllers\latihan4Controller::class, 'indexlatihan4']);
+Route::post('/latihan4/update', [App\Http\Controllers\latihan4Controller::class, 'updatelatihan4']);
+Route::get('/latihan4/edit/{nrp}', [App\Http\Controllers\latihan4Controller::class, 'edit4']);
+Route::get('/latihan4/view/{nrp}', [App\Http\Controllers\latihan4Controller::class, 'view4']);
+
+
+//route latihan5
+Route::get('/latihan5', [App\Http\Controllers\chatController::class, 'indexlatihan5']);
+
+//route latihan6
+Route::get('/latihan6', [App\Http\Controllers\latihan6Controller::class, 'indexlatihan6']);
+Route::post('/latihan6/update', [App\Http\Controllers\latihan6Controller::class, 'updatekategori']);

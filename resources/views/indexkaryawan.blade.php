@@ -28,8 +28,5 @@
     </table>
     <div class="d-flex justify-content-between align-items-center">
         <a href="/karyawan/tambah" class="btn btn-primary">+ Tambah Data Karyawan</a>
-        <div class="float-right">
-            {{ $karyawans->links() }}
-        </div>
     </div>
 @endsection
